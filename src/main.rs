@@ -1,11 +1,15 @@
+extern crate colored;
+use colored::*;
 use std::env;
 use std::io::{stdin, stdout, Write};
 use std::path::Path;
 use std::process::Command;
 
 fn main() {
+    println!("{}", "Welcome to the Rusty Shell".green());
+
     loop {
-        print!("> ");
+        print!("{}", "> ".cyan().bold());
         stdout().flush().unwrap();
         let mut input = String::new();
         stdin().read_line(&mut input).unwrap();
